@@ -1,0 +1,24 @@
+{% extends 'template.html' %}
+
+{% block title%}
+
+КОНТЕНТ
+{% endblock %}
+
+{% block body%}
+<h1>Тут главный контент</h1>
+	<div class="wrapper">
+        <div class="header">Тут должен был быть хедер</div>
+		<div class="left-sidebar">а тут сайдбар</div>
+		<div class="content">
+		<ul id="navigation">
+    	{% for i in range(1,11) %}
+			<div class="post">
+				а тут пост номер {{i}}
+			</div>
+    	{% endfor %}
+    	</ul>
+		</div>
+		<div class="footer">А ТУТ ФУТЕР</div>
+	</div>
+{% endblock %}
