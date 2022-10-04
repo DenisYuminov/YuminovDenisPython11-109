@@ -3,22 +3,43 @@
 .header {
     margin-bottom: 10px;
     text-align: center;
+    background: green;
 }
 
 .left-sidebar{
-    width: 25em border-box;
+    width: 400px ;
+    height: 300px;
+    background: #d7b0b0;
 }
 .content{
-    width: 75em border-box;
-    margin-left: 10px;
+    width: 1000px;
+    margin-left: 10em;
     margin-right: 10px;
+    background: yellow;
+    text-align: center;
 }
 
 .post {
     margin: 5px auto;
+    background: grey;
+
 }
 
 .footer {
-    margin-top: 10px;
+    position: absolute;
+    width: 100%;
+    height: 50px;
+    background: plum;
+    bottom: 0;
+
 }
 
+.container{
+    position: relative;
+    padding-top: 50px;
+    width: 100%;
+    display: -webkit-inline-flex;
+    display: inline-flex;
+    justify-content: space-evenly;
+
+}
