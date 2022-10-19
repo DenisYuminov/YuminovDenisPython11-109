@@ -1,0 +1,20 @@
+body {
+    background-color: plum;
+}
+.superkek {
+    font-size: 20px;
+}
+
+.product {
+    width: 363px;
+    height: 100px;
+    background-color: gray;
+}
+
+.product .title {
+    font-weight: bold;
+}
+
+.product .link {
+    color: red;
+}

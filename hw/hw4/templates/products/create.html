@@ -1,0 +1,25 @@
+{% extends 'main.html' %}
+
+{% block title %}
+Создание
+{% endblock %}
+
+{% block content %}
+
+<div>
+    <form action="" method="post">
+        <p>Название</p>
+        <input type="text" name="name" value="Vasya"/>
+
+        <p>Цена</p>
+        <input type="number" name="price" min="0" max="1000"/>
+
+
+        <p>Описание</p>
+        <input type="text" name="description" placeholder="some text"/>
+
+        <input type="submit" value="Отправить">
+    </form>
+</div>
+
+{% endblock %}

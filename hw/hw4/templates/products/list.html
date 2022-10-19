@@ -1,0 +1,20 @@
+{% extends 'main.html' %}
+
+{% block title %}
+Товары
+{% endblock %}
+
+{% block content %}
+
+<a class="link" href="{{ url_for('product_create') }}">Создать</a>
+
+
+{% for product in products %}
+    <div class="product">
+        <p class="title superkek">{{ product.name }}. Цена: {{ product.price }}</p>
+        <a class="link" href="{{ url_for('product_edit', pid=product['id']) }}">Обновить</a>
+        <a class="link" href="{{ url_for('product_delete', pid=product['id']) }}">Удалить</a>
+    </div>
+{% endfor %}
+
+{% endblock %}
