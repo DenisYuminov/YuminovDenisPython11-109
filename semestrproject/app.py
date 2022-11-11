@@ -122,6 +122,7 @@ def product_create():
         else:
             conn = get_db_connection()
             login = session['username']
+
             if login:
                 user = conn.execute("SELECT * FROM users WHERE login = ?", (login,)).fetchone()
                 insert(table_name='posts', text=text, user_id=user['id'])
