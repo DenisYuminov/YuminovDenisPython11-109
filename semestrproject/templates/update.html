@@ -1,0 +1,30 @@
+{% extends 'template.html' %}
+
+{% block title %}
+Изменить
+{% endblock %}
+
+{% block body %}
+{% if session['user_id'] == product.user_id %}
+<div class="head_page">
+    <div class="header">
+        <a href="" class="logo">
+            <img src="/static/img.png" alt="log" class="logo">
+        </a>
+    </div>
+</div>
+<form method="POST" action="">
+    <div class="w-create">
+        <input type="text" name="text" value="{{product.text}}">
+        <input type="submit" class="create_sform" value="Изменить">
+    </div>
+</form>
+{% else %}
+<div class="alert">
+    <div><label>Вы не можете редактировать, не ваш пост</label></div>
+    <a href="{{url_for('products_list')}}">
+    <div><button type="reg" class="signuptry">Назад</button></div>
+    </a>
+</div>
+{%endif%}
+{% endblock %}

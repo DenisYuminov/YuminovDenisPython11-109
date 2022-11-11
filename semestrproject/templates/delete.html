@@ -1,0 +1,22 @@
+{% extends 'template.html' %}
+
+{% block title %}
+Удалить
+{% endblock %}
+
+{% block body %}
+<div class="head_page">
+    <div class="header">
+        <a href="" class="logo">
+            <img src="/static/img.png" alt="log" class="logo">
+        </a>
+    </div>
+</div>
+<form method="POST" action="">
+    <div class="w-delete">
+        <label>{{product['text']}}</label>
+        <input type="submit" class="create_sform" value="Удалить">
+    </div>
+</form>
+
+{% endblock %}

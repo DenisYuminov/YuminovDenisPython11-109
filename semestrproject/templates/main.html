@@ -1,0 +1,60 @@
+{% extends 'template.html' %}
+
+{% block title%}
+Вход
+{% endblock %}
+{% block body%}
+    <nav class="navbar">
+        <div class="container">
+            <a href="#" class="logo">
+                <img src="/static/img.png" alt="log" class="mainlogo">
+            </a>
+
+            <div class="navbar-wrap">
+                <ul class="navbar-menu">
+                <li><a href="#" class="prod">
+                    <img src="/static/products.png" class="products_ic" alt="prod_ic">
+                </a></li>
+                <li><a href="#" class="search">
+                    <img src="/static/search.svg" alt="search_ic">
+                </a></li>
+                <li><a href="{{url_for('product_create' )}}" class="cart">
+                    <img src="/static/create.svg" alt="cart_ic">
+                </a></li>
+                    {%if session['username'] == None%}
+                <li><a href="{{url_for('signup')}}" class="profile">
+                    <img src="/static/profile.svg" alt="profile_ic">
+                </a></li>
+                    {%endif%}
+                    {%if session['username'] != None%}
+                                        <li><a href="{{url_for('get_profile_info')}}" class="username">
+                     <label for="username"><b>{{session['username']}}</b></label>
+                 </a></li>
+                    {% else %}
+                    <label for="username"><b>Вы не авторизованы</b></label>
+                 </a></li>
+                    {%endif%}
+                   {%if session['username'] != None%}
+                 <li><a href="{{url_for('logout')}}" class="logout">
+                     <button class="logout">Выйти</button>
+                 </a></li>
+                    {%endif%}
+            </ul>
+            </div>
+
+
+        </div>
+    </nav>
+
+    <div class="cards_list">
+        {% for product in products %}
+            <div class="card">
+                <img src="/static/images/l186sR15.jpg" class="card-img" alt="Card image cap">
+                <div class="card-body">
+                    <h5 class="card-title">{{ product.text }}</h5>
+                </div>
+            </div>
+        {% endfor %}
+        </div>
+
+{% endblock %}

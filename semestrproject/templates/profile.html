@@ -1,0 +1,29 @@
+{% extends 'template.html' %}
+Моя страница
+{% block title%}
+Вход
+{% endblock %}
+{% block body%}
+    <div><label for="login"><b>Username:{{session['username']}}</b></label></div>
+    <div><label for="image"><b>User photo:{{session['username']}}</b></label></div>
+{% if size>0%}
+<div class="cards_list">
+        <div><label>Ваши записи</label></div>
+        {% for product in products %}
+            <div class="card">
+                <img src="/static/images/l186sR15.jpg" class="card-img" alt="Card image cap">
+                <div class="card-body">
+                    <h5 class="card-title">{{product.text}}</h5>
+                </div>
+            </div>
+        {% endfor %}
+        </div>
+{% else%}
+<div class="noposts">
+    <div><label for="label"><b>У вас еще нет ни одной записи. Хотите создать?</b></label></div>
+        <a href="{{url_for('product_create')}}">
+            <button class="log">Да</button>
+        </a>
+    </div>
+{%endif%}
+{% endblock %}

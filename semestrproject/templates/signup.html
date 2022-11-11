@@ -1,0 +1,39 @@
+{% extends 'template.html' %}
+
+{% block title%}
+Регистрация
+{% endblock %}
+
+{% block body%}
+<div class="modal">
+    <form method="POST" action="{{ url_for('signup') }}">
+
+        <div class="login">
+   <label for="login"><b>Логин</b></label>
+    <input type="text" name="login" placeholder="Введите свой логин">
+        </div>
+
+        <div class="password1">
+        <label for="passwrod1"><b>Пароль</b></label>
+    <input type="password" name="password1" placeholder="Введите свой пароль">
+        </div>
+
+        <div class="passwrod2">
+        <label for="passwrod2"><b>Подтвердите пароль</b></label>
+    <input type="password" name="password2" placeholder="Подтвердите свой пароль">
+        </div>
+    <input type="submit" value="Signup">
+</form>
+    <div>
+         <a href="{{url_for('vk_login')}}">
+            <button class="button_VK">Войти через ВКОНТАКТЕ</button>
+        </a>
+        </div>
+    <div>
+        <a href="{{url_for('login')}}">
+            <button class="log">У меня уже есть аккаун</button>
+        </a>
+    </div>
+</div>
+
+{% endblock %}

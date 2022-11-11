@@ -1,0 +1,27 @@
+{% extends 'template.html' %}
+
+{% block title %}
+Создание
+{% endblock %}
+
+{% block body %}
+{% if session['username'] != None %}
+<form class="createf" method="POST" action="">
+        <a href="" class="logo">
+            <img src="" alt="log" class="logo">
+        </a>
+        <div class="w-create">
+        <input class="createposts" type="text" name="text" placeholder="Расскажите что у вас нового">
+        <div><input type="submit" class="create_sform" value="Создать"></div>
+    </div>
+</form>
+{% else %}
+<div class="alert">
+    <div><label>Вы не можете создать, нужно залогинится</label></div>
+    <a href="{{url_for('signup')}}">
+    <div><button type="reg" class="signuptry">Регистрация</button></div>
+    </a>
+</div>
+
+{% endif %}
+{% endblock %}

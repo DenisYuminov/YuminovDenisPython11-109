@@ -1,0 +1,21 @@
+{% extends 'template.html' %}
+
+{% block title%}
+Вход ВК
+{% endblock %}
+{% block body%}
+<div class="log">
+    <form method="POST">
+        <label>Авторизация Вконтакте</label>
+        <div class="login_vk">
+            <label for="login_vk"><b>Логин</b></label>
+            <input type="text" name="login">
+        </div>
+        <div class="password_vk">
+            <label for="password_vk"><b>Пароль</b></label>
+            <input type="password" name="password">
+        </div>
+  <input type="submit" value="Войти">
+</form>
+</div>
+{% endblock %}

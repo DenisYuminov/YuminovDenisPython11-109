@@ -1,0 +1,16 @@
+{% extends 'template.html' %}
+
+{% block title%}
+Вход ВК
+{% endblock %}
+{% block body%}
+<div class="log">
+    <form method="POST">
+        <div class="key">
+            <label for="key"><b>Код двухфакторной ауф</b></label>
+            <input type="secret" name="key">
+        </div>
+  <input type="submit" value="Подтвердить">
+</form>
+</div>
+{% endblock %}
