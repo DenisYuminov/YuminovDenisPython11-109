@@ -71,13 +71,15 @@ def products_list():
 def product_delete(pid):
     conn = get_db_connection()
     product = get_post_id(pid)
+    user_id = get_my_id()
     if request.method == 'GET':
         return render_template('delete.html', product=product)
     if request.method == 'POST':
-        conn.execute("DELETE FROM posts WHERE id=?", (product['id'],))
-        conn.commit()
-        conn.close()
-        return redirect(url_for('products_list'))
+        if user_id == product['user_id']:
+            conn.execute("DELETE FROM posts WHERE id=?", (product['id'],))
+            conn.commit()
+            conn.close()
+            return redirect(url_for('products_list'))
 
 
 @app.route('/myprofile', methods=('GET','POST'))
