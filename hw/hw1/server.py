@@ -22,6 +22,7 @@ while True:
         data = connection.recv(size)
         try:
             parts = int(data.decode())
+
         except:
             continue
         massage = ""
@@ -29,7 +30,7 @@ while True:
             data = connection.recv(size)
             massage = f'{massage}{data.decode(encoding)}'
         if data:
-            print("Msg from client:",massage)
+            print("Msg from client:", massage)
         else:
             print("Empty data")
 
